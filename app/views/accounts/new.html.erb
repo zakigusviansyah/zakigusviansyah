@@ -1,0 +1,23 @@
+<%= form_for @user, url: accounts_path do |f| %>
+<div>
+<%= f.label :name %> </br>
+</div>
+<div>
+<%= f.text_field :name %> </br>
+</div>
+<div>
+<%= f.label :username %> </br>
+</div>
+<div>
+<%= f.text_field :username %> </br>
+</div>
+<div>
+<%= f.label :password %> </br>
+</div>
+<div>
+<%= f.password_field :password %> </br>
+</div>
+<div>
+<%= f.submit "Register" %>
+</div>
+<% end %>

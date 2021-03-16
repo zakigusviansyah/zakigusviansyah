@@ -1,0 +1,23 @@
+<h1><center> DATA BUKU </center></h1>
+<table>
+    <tr>
+        <td><h3>JUDUL</h3</td>
+        <td><h3>DESKRIPSI</h3></td>
+        <td><h3>TINDAKAN</h3></td>
+    </tr>
+    <% if flash[:notice].present? %>
+    <%= flash[:notice] %>
+    <% end %>
+    <% @books.each do |book| %>
+    <tr>
+        <td><%= book.title %></td>
+        <td><%= book.description%></td>
+        <td><%= link_to "Tampilkan", book_path(book)%> | <%= link_to "Edit", edit_book_path(book)%> | 
+        <%= link_to "Hapus", book_path(book),method: :delete,data: {confirm: 'Apakah Kamu Yakin?'}%> </td>
+    </tr>
+    <% end %> 
+    <tr>
+    </tr>
+</table>
+<%= link_to "Buku Baru", new_book_path %>
+<%= render 'info', popular_book: 'Belajar Ruby On Rails'%>
